@@ -35,13 +35,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
     - name: Checkout
-        uses: actions/checkout@v1
+      uses: actions/checkout@v1
 
     - name: Download build
       uses: actions/download-artifact@v1
       with:
         name: deploy_dist
-        
+
     - uses: actions/checkout@master    
     - uses: jakejarvis/s3-sync-action@master    
       with:
