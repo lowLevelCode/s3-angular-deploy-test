@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 14
+        node-version: 16
 
     # Install the node modules
     - name: Install dependencies
@@ -23,7 +23,7 @@ jobs:
 
     # Create production build
     - name: Production Build
-      run: npm run build --configuration production
+      run: npm run build:prod
 
     - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
