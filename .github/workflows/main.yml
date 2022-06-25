@@ -18,7 +18,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1.4.3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
       
       - name: NPM Install
         run: npm install
