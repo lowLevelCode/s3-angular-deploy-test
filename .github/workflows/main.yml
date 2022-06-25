@@ -24,9 +24,15 @@ jobs:
     # Create production build
     - name: Production Build
       run: npm run build:prod
+
+    - name: Archive build
+      if: success()
+      uses: actions/upload-artifact@v1
+      with:
+        name: deploy_dist
+        path: dist
     
-    - uses: actions/checkout@master
-    - name: Action
+    - uses: actions/checkout@master    
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
