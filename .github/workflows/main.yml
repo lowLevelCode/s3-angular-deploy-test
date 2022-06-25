@@ -23,7 +23,7 @@ jobs:
 
     # Create production build
     - name: Production Build
-      run: npm run build -- --prod
+      run: npm run build --configuration production
 
     - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
