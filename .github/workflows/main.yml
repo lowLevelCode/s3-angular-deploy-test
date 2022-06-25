@@ -50,5 +50,5 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: sa-east-1
 
-     - name: Deploying      
+    - name: Deploying      
       run: aws s3 sync ./dist/test-angular s3://ritchtablet-bucket-test-page
